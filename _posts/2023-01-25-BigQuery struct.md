@@ -11,7 +11,7 @@ search: true
 ---
 
 1. Array
-```SQL
+```sql
      SELECT
      -- {project_id}
           -- {dataset1}
@@ -37,7 +37,7 @@ search: true
 ```
 
 2. Struct
-```SQL
+```
      SELECT
      -- {project_id}
           -- {dataset1}
@@ -61,3 +61,5 @@ search: true
           -- {dataset4}
           , struct('{project_id}.{dataset4}.{datatable_names}' as table_address, 'DAG' as gen_type, 'a' as gen_link, 'b' as regen_link) ] as meta
 ```
+
+[참고링크](https://medium.com/google-cloud/how-to-work-with-array-and-structs-in-bigquery-9c0a2ea584a6)
