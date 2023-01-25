@@ -10,7 +10,7 @@ sidebar:
 search: true
 ---
 
-1. Array
+Array
 ```sql
      SELECT
      -- {project_id}
@@ -36,7 +36,7 @@ search: true
           , '{project_id}.{dataset4}.{datatable_names}' ] as table_list
 ```
 
-2. Struct
+Struct
 ```
      SELECT
      -- {project_id}
