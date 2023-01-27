@@ -12,11 +12,11 @@ minimal-mistakes
 ├── 🗂 docs                   : samples
 ├── 🗂 images                 : image file directory
 ├── 🗂 test
-├── _config.yml                # site configuration
-├── Gemfile                    # gem file 
-├── index.html                 # paginated home page showing recent posts
-├── package.json                 # paginated home page showing recent posts
-└── README.md               # NPM build scripts
+├── _config.yml               : site configuration
+├── Gemfile                   : gem file 
+├── index.html                : paginated home page showing recent posts
+├── package.json              : paginated home page showing recent posts
+└── README.md               
 ```
 
 ---
