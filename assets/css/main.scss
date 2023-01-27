@@ -7,3 +7,37 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+html {
+    font-size: 16px; // change to whatever
+    
+    @include breakpoint($medium) {
+        font-size: 18px; // change to whatever
+    }
+    
+    @include breakpoint($large) {
+        font-size: 18px; // change to whatever
+    }
+    
+    @include breakpoint($x-large) {
+        font-size: 16px; // 13inch full screen
+    }
+}
+
+//from _page.scss
+// .archive {
+//     margin-top: 1em;
+//     margin-bottom: 2em;
+  
+//     @include breakpoint($large) {
+//       float: right;
+//       width: calc(100% - #{$right-sidebar-width-narrow});
+//       padding-right: $right-sidebar-rho-default;
+//     }
+  
+//     @include breakpoint($x-large) {
+//       width: calc(100% - #{$right-sidebar-width});
+//       padding-right: $right-sidebar-rho-default;
+//     }
+//   }
