@@ -338,18 +338,20 @@ body {
   }
 }
 
-.page__taxonomy-item {
+.page__taxonomy-item { // category & tag buttons
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 8px;
   padding: 5px 10px;
   text-decoration: none;
-  border: 1px solid mix(#000, $border-color, 25%);
-  border-radius: $border-radius;
-
+  background-color: rgb(209, 224, 246); 
+  //border: 1px solid mix(#000, $border-color, 0.05%);
+  border-radius: $border-radius ;
+  
   &:hover {
+    font-weight: bold;
     text-decoration: none;
-    color: $link-color-hover;
+    color: rgb(3, 92, 236);
   }
 }
 
