@@ -6,6 +6,36 @@
    Breadcrumb navigation links
    ========================================================================== */
 
+// this function from : https://github.com/chaelin0722/chaelin0722.github.io/blob/master/_sass/minimal-mistakes/_navigation.scss
+// .pagination_prev_next {
+//   @include clearfix();
+//   width: 100%;
+
+//   /* next/previous buttons */
+//   &--pager {
+//     margin-top: 0em;
+//     padding-top: 0em;
+//     display: block;
+//     padding: 1em 2em;
+//     //float: left;
+//     width: 100%;
+//     font-family: $sans-serif;
+//     font-size: $type-size-5;
+//     font-weight: bold;
+//     text-align: center;
+//     text-decoration: underline;
+//     color: $muted-text-color;
+//     border: 1px solid mix(#000, $border-color, 25%);
+//     border-radius: $border-radius;
+
+//     .prev_next {
+//       font-family: $sans-serif;
+//       color:#f08137;
+//     }
+//   }
+// }
+
+
 .breadcrumbs {
   @include clearfix;
   margin: 0 auto;
@@ -128,12 +158,15 @@
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: $muted-text-color;
-    border: 1px solid mix(#000, $border-color, 25%);
+    color:rgb(25, 64, 124);
+    background-color: rgb(209, 224, 246);
+    border: 2px solid rgba(25, 64, 124, 0.7);
     border-radius: $border-radius;
 
     &:hover {
-      @include yiq-contrasted($muted-text-color);
+      background-color: rgb(25, 64, 124); 
+      color: rgb(218, 227, 243);
+      // @include yiq-contrasted($muted-text-color);
     }
 
     &:first-child {
