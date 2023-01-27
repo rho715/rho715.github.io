@@ -73,7 +73,7 @@ body {
   line-height: 1;
 
   a {
-    color: $text-color;
+    color: $text-color; //each post title
     text-decoration: none;
   }
 
@@ -113,7 +113,7 @@ body {
   p,
   li,
   dl {
-    font-size: 1em;
+    font-size: 0.9em; //page content font size 
   }
 
   /* paragraph indents */
@@ -299,7 +299,7 @@ body {
 
 .page__meta {
   margin-top: 2em;
-  color: $muted-text-color;
+  color: $blue; // $muted-text-color; //dates & min to read ...
   font-family: $sans-serif;
   font-size: $type-size-6;
 
