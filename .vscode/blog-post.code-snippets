@@ -1,0 +1,19 @@
+{
+  "github.io": {
+    "prefix": "git-post",
+    "body": [
+      "---",
+      "layout: single",
+      "title: \"$1\"",
+      "categories: [$2]",
+      "tag: [$3]",
+      "toc: false",
+      "author_profile: false",
+      "sidebar:",
+      "    nav: \"docs\"",
+      "search: true",
+      "---"
+    ],
+    "description": "github.io"
+  }
+}
