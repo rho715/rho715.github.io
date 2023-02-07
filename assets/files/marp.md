@@ -59,6 +59,6 @@ footer: this is rhorho footer
 
 
 ---
-you can check out your map themes [here](0https://github.com/topics/marp-themes)
+you can check out your map themes [here](https://github.com/topics/marp-themes)
 
 and you can also use your own css & html

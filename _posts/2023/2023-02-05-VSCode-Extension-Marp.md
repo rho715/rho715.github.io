@@ -10,7 +10,7 @@ sidebar:
 search: true
 ---
 
-1. check our marp [template](../../assets/files/marp.md)
+1. check our marp [template](../../assets/files/marp.html)
 
 **[유튜브 영상]**
 
