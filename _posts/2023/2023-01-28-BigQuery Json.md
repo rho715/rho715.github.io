@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "BigQuery Json Data"
-categories: [BigQuery, SQL]
-tag: [json]
+categories: [GCP]
+tag: [BigQuery, SQL, json]
 toc: false
 author_profile: false
 sidebar:

@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "BigQuery Sharded Tables"
-categories: [BigQuery, SQL]
-tag: [sharded, yyyymmdd, offset, regex, ddl, INFORMATION_SCHEMA]
+categories: [GCP]
+tag: [BigQuery, SQL, sharded, yyyymmdd, offset, regex, ddl, INFORMATION_SCHEMA]
 toc: false
 author_profile: false
 sidebar:

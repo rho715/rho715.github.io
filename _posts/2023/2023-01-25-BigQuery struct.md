@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "BigQuery Struct 구조 정리하기"
-categories: [BigQuery, SQL]
-tag: [struct(), Array]
+categories: [GCP]
+tag: [BigQuery, SQL, struct(), Array]
 toc: false
 author_profile: false
 sidebar:
