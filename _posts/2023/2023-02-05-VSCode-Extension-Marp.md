@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "VSCode Extension Marp"
-categories: [VSCode]
-tag: [Marp]
+categories: [IDE]
+tag: [Marp, VSCode]
 toc: false
 author_profile: false
 sidebar:
@@ -12,7 +12,7 @@ search: true
 
 1. check our marp [template](../../assets/files/marp.html)
 
-```md
+```markdown
 ---
 marp: true
 theme: gaia
