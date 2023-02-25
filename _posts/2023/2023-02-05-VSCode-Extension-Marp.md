@@ -4,13 +4,12 @@ title: "VSCode Extension Marp"
 categories: [IDE]
 tag: [Marp, VSCode]
 toc: false
-author_profile: false
 sidebar:
     nav: "docs"
 search: true
 ---
 
-1. check our marp [template](../../assets/files/marp.html)
+### Check out marp and its code:  [RESULT](../../assets/files/marp.html)
 
 ```markdown
 ---
@@ -74,11 +73,8 @@ footer: this is rhorho footer
 
 
 ---
-you can check out your map themes [here](https://github.com/topics/marp-themes)
-
-and you can also use your own css & html
-```
-
-**[유튜브 영상]**
-
-{% include video id="Q2PCO0mKEaU" provider="youtube" %}
+### 참고자료 
+- you can check out your map themes [here](https://github.com/topics/marp-themes)
+- and you can also use your own css & html for marp
+- [유튜브 영상] {% include video id="Q2PCO0mKEaU" provider="youtube" %}
+    
