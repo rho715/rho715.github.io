@@ -4,7 +4,6 @@ title: "Jekyll 블로그 레퍼런스 모음집"
 categories: [GitHub]
 tag: [jekyll]
 toc: false
-author_profile: false
 sidebar:
     nav: "docs"
 search: true

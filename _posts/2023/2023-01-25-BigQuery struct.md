@@ -4,7 +4,6 @@ title: "BigQuery Struct 구조 정리하기"
 categories: [GCP]
 tag: [BigQuery, SQL, struct(), Array]
 toc: false
-author_profile: false
 sidebar:
     nav: "docs"
 search: true

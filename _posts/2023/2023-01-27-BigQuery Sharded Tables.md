@@ -3,8 +3,9 @@ layout: single
 title: "BigQuery Sharded Tables"
 categories: [GCP]
 tag: [BigQuery, SQL, sharded, yyyymmdd, offset, regex, ddl, INFORMATION_SCHEMA]
-toc: false
-author_profile: false
+toc: true
+toc_sticky: true
+toc_icon: "fas fa-sign"
 sidebar:
     nav: "docs"
 search: true

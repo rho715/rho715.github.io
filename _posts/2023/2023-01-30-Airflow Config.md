@@ -3,16 +3,15 @@ layout: single
 title: "Airflow Config"
 categories: [Airflow]
 tag: [context, kwargs]
-toc: false
-author_profile: false
+toc: true
+toc_sticky: true
+toc_icon: "fas fa-sign"
 sidebar:
     nav: "docs"
 search: true
 ---
 
-#### Airflow Dag python file
-
-[참고](https://pinggoopark.tistory.com/682)
+#### Airflow Dag python file [[참고]](https://pinggoopark.tistory.com/682)
 
 ```python
 # file name : dag_config.py

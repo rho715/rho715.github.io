@@ -3,8 +3,9 @@ layout: single
 title: "BigQuery Json Data"
 categories: [GCP]
 tag: [BigQuery, SQL, json]
-toc: false
-author_profile: false
+toc: true
+toc_sticky: true
+toc_icon: "fas fa-sign"
 sidebar:
     nav: "docs"
 search: true
