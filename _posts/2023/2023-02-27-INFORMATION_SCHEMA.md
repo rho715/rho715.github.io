@@ -3,8 +3,7 @@ layout: single
 title: "INFORMATION_SCHEMA"
 categories: [GCP]
 tag: [BigQuery, INFORMATION_SCHEMA]
-toc: false
-author_profile: false
+toc: true
 sidebar:
     nav: "docs"
 search: true
@@ -12,12 +11,12 @@ search: true
 
 ## BigQuery INFORMATION_SCHEMA 소개
 
-```
-BigQuery INFORMATION_SCHEMA 뷰는 읽기 전용이며 BigQuery 객체에 대한 메타데이터 정보를 제공하는 시스템 정의 뷰입니다. 다음 표에서는 메타데이터 정보를 검색하기 위해 쿼리할 수 있는 모든 INFORMATION_SCHEMA 뷰를 보여줍니다.
-```
+`BigQuery INFORMATION_SCHEMA 뷰는 읽기 전용이며 BigQuery 객체에 대한 메타데이터 정보를 제공하는 시스템 정의 뷰입니다.` 
+
 
 
 ## REFERENCE
+
 |INFORMATION_SCHEMA 뷰|리소스 유형|
 |--- |--- |
 |[INFORMATION_SCHEMA.SCHEMATA](https://cloud.google.com/bigquery/docs/information-schema-intro?hl=ko#schemata_view)|데이터 세트|
