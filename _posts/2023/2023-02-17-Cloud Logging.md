@@ -2,7 +2,7 @@
 layout: single
 title: "Cloud Logging Search"
 categories: [GCP]
-tag: [Cloud Loggin]
+tag: [Cloud Logging]
 toc: false
 sidebar:
     nav: "docs"
