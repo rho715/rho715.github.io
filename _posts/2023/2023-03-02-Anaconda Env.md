@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Anaconda Enviornment"
+title: "Anaconda Environment"
 categories: [Anaconda3]
 tag: [Python]
 toc: true
@@ -60,12 +60,12 @@ pip uninstall -r  requirements.txt
 
 
 ## packages 
-### installed packages
+### get installed packages list
 ```console
 conda list 
 ``` 
 
-### install a pacakge
+### install a package
 ```
 conda install pandas 
 ``` 
