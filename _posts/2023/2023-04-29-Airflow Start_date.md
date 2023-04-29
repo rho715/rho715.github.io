@@ -225,5 +225,5 @@ search: true
             - `logical_date: 2023-04-29 17:10:00` 작업이 `2023-04-29 18:10:00`에 실행이 된다고 기대할 수 있지만 
             - 실제로는  `logical_date: 2023-04-29 16:10:00` 작업이 `2023-04-29 17:15:00`에 실행이 된다.
 
-catchup & backfill도 매우 중요한 개념이니 집고 넘어가자 [블로그](https://magpienote.tistory.com/236)
+catchup & backfill도 매우 중요한 개념이니 짚고 넘어가자 [블로그](https://magpienote.tistory.com/236)
 
