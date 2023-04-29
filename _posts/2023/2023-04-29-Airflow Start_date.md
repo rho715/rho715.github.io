@@ -168,62 +168,65 @@ search: true
 
 - `v1.0.2`는 `start_date`를 23년 4월 28일 오후 5시로 등록 & `schedule_interval`도 매일 오후 5시로 설정. 따라서 23년 4월 29일 오후 5시에 작업이 실행되는데. 내가 작업을 23년 4월 29일 오후 4시에 등록했으니 5시가 되면 자동으로 실행될 예정이여서 돌지 않았다. 
 
-어떻게 보면 당연한 이야기 같지만 실제로 이러한 로직을 모르면 언제는 실행이 되고 언제는 실행이 안되는지 헷갈린다. 업무에서 Airflow를 사용하면서 가장 헷갈렸던 것은 매시 돌아가는 배치 스케줄을 등록했을때이다. 
+어떻게 보면 당연한 이야기 같지만 실제로 이러한 로직을 모르면 언제는 실행이 되고 언제는 실행이 안되는지 헷갈린다. 업무에서 Airflow를 사용하면서 가장 헷갈렸던 것은 매시 돌아가는 배치 스케줄을 등록했을때이다. 회사에서는 보통 아래와 같이 설정하고 있는데
 
-- 회사에서는 보통 아래와 같이 설정하고 있는데
-    ```python
-    OWNER = 'rho715@'
-    DAG_ID = os.path.basename(__file__).replace(".pyc", "").replace(".py", "")
-    DAG_NAME = f'prd01_{DAG_ID}_v1.0.2'
-    default_args = {
-        'owner': OWNER,
-        'dag_id': DAG_ID,
-        'depends_on_past': False,
-        'start_date': pendulum.now(tz='Asia/Seoul') - timedelta(days=1),
-        'email_on_failure': False,
-        'email_on_retry': False,
-    }
+```python
+OWNER = 'rho715@'
+DAG_ID = os.path.basename(__file__).replace(".pyc", "").replace(".py", "")
+DAG_NAME = f'prd01_{DAG_ID}_v1.0.2'
+default_args = {
+    'owner': OWNER,
+    'dag_id': DAG_ID,
+    'depends_on_past': False,
+    'start_date': pendulum.now(tz='Asia/Seoul') - timedelta(days=1),
+    'email_on_failure': False,
+    'email_on_retry': False,
+}
 
-    with DAG(DAG_NAME,
-            default_args=default_args,
-            dagrun_timeout=timedelta(hours=2),
-            max_active_runs=1,
-            max_active_tasks=1,
-            catchup=False,
-            is_paused_upon_creation=True,
-            schedule_interval="10 * * * *",
-            tags=['testing']
-            ) as dag:
-        start = DummyOperator(
-            task_id='start',
-            dag=dag
-        )
+with DAG(DAG_NAME,
+        default_args=default_args,
+        dagrun_timeout=timedelta(hours=2),
+        max_active_runs=1,
+        max_active_tasks=1,
+        catchup=False,
+        is_paused_upon_creation=True,
+        schedule_interval="10 * * * *",
+        tags=['testing']
+        ) as dag:
+    start = DummyOperator(
+        task_id='start',
+        dag=dag
+    )
 
-        task_01 = PythonOperator(
-            task_id='task_01',
-            python_callable=print_time,
-            provide_context=True,
-            execution_timeout=timedelta(minutes=30),
-            dag=dag
-        )
+    task_01 = PythonOperator(
+        task_id='task_01',
+        python_callable=print_time,
+        provide_context=True,
+        execution_timeout=timedelta(minutes=30),
+        dag=dag
+    )
 
-        end = DummyOperator(
-            task_id='end',
-            dag=dag
-        )
+    end = DummyOperator(
+        task_id='end',
+        dag=dag
+    )
 
-        start >> task_01 >> end
-    ```
-    `catchup` 변수를 `False`로 지정했는데도 불구하고 왜 실행이 될까 항상 의아했는데 아래와 같이 설정해줘야하는 부분을 이번에 알게 되었다
-        
-    - AS-IS: `'start_date': pendulum.now(tz='Asia/Seoul') - timedelta(days=1)` 
-    - TO-BE: `'start_date': pendulum.now(tz='Asia/Seoul') - timedelta(hours=1)`
-    - 추가로 매시 10분 작업 스케줄을 등록했으면 00~10분사이에 작업이 airflow에 등록 되어야 내가 원하는 시간대부터 스케줄이 돌아갔다. 예를 들어 
-        - 23년 4월 29일 오후 5시 5분에 매시 10분마다 실행되는 DAG를 등록할 경우,
-            - `logical_date: 2023-04-29 16:10:00` 작업이 `2023-04-29 17:10:00`에 실행이 된다 
-        - 하지만 23년 4월 29일 오후 5시 15분에 매시 10분마다 실행되는 DAG를 등록할 경우,
-            - `logical_date: 2023-04-29 17:10:00` 작업이 `2023-04-29 18:10:00`에 실행이 된다고 기대할 수 있지만 
-            - 실제로는  `logical_date: 2023-04-29 16:10:00` 작업이 `2023-04-29 17:15:00`에 실행이 된다.
+    start >> task_01 >> end
+```
+`catchup` 변수를 `False`로 지정했는데도 불구하고 왜 실행이 될까 항상 의아했는데 아래와 같이 설정해줘야하는 부분을 이번에 알게 되었다
+    
+- AS-IS: `'start_date': pendulum.now(tz='Asia/Seoul') - timedelta(days=1)` 
+- TO-BE: `'start_date': pendulum.now(tz='Asia/Seoul') - timedelta(hours=1)`
+- 추가로 매시 10분 작업 스케줄을 등록했으면 00~10분사이에 작업이 airflow에 등록 되어야 내가 원하는 시간대부터 스케줄이 돌아갔다. 예를 들어 
+    - 23년 4월 29일 오후 5시 5분에 매시 10분마다 실행되는 DAG를 등록할 경우,
+        - `logical_date: 2023-04-29 16:10:00` 작업이 `2023-04-29 17:10:00`에 실행이 된다 
+    - 하지만 23년 4월 29일 오후 5시 15분에 매시 10분마다 실행되는 DAG를 등록할 경우,
+        - `logical_date: 2023-04-29 17:10:00` 작업이 `2023-04-29 18:10:00`에 실행이 된다고 기대할 수 있지만 
+        - 실제로는  `logical_date: 2023-04-29 16:10:00` 작업이 `2023-04-29 17:15:00`에 실행이 된다.
 
-catchup & backfill도 매우 중요한 개념이니 짚고 넘어가자 [블로그](https://magpienote.tistory.com/236)
+catchup & backfill도 매우 중요한 개념이니 헷갈릴때마다 읽어보자. [블로그](https://magpienote.tistory.com/236)
 
+
+## 참고자료 
+- [Airflow DAG start_date 제대로 알기](https://velog.io/@baeyuna97/DAG-startdate)
+- [[Airflow]Catch up, Backfill 알아보기](https://magpienote.tistory.com/236)
