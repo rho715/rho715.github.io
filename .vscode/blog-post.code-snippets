@@ -16,4 +16,24 @@
     ],
     "description": "github.io"
   }
+  ,
+  "github.io.toc": {
+    "prefix": "git-post-toc",
+    "body": [
+      "---",
+      "layout: single",
+      "title: \"$1\"",
+      "categories: [$2]",
+      "tag: [$3]",
+      "toc: true",
+      "toc_sticky: true",
+      "toc_icon: 'fas fa-sign'",
+      "author_profile: false",
+      "sidebar:",
+      "    nav: \"docs\"",
+      "search: true",
+      "---"
+    ],
+    "description": "github.io"
+  }
 }
