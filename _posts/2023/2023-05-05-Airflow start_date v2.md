@@ -325,4 +325,6 @@ current\_time: `2023-05-04 13:00:00`
 *   배포 후에 과거 작업이 실행되어도 상관 없다 : `start_date` 하루 전
 *   배포 후에 과거 작업이 실행되면 안된다 : `start_date` 한시간 전
     
-
+## 참고자료 
+- [Airflow DAG start_date 제대로 알기](https://velog.io/@baeyuna97/DAG-startdate)
+- [[Airflow]Catch up, Backfill 알아보기](https://magpienote.tistory.com/236)
