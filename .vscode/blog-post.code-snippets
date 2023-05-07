@@ -36,4 +36,13 @@
     ],
     "description": "github.io"
   }
+  , 
+  "code-python": {
+    "prefix": "code-python",
+    "body": [
+      "```python",
+      "$1",
+      "```"
+    ]
+  }
 }
