@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "Airflow retry_delay"
+title: "Airflow Task Fail Cancel Query"
 categories: [Airflow, GCP]
-tag: [BigQuery, chatGPT]
+tag: [BigQuery, chatGPT, Cancel, job_id]
 toc: false
 sidebar:
     nav: "docs"

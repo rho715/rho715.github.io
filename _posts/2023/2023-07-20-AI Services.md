@@ -35,6 +35,6 @@ search: true
 - [Azure Search OpenAI Demo](https://github.com/Azure-Samples/azure-search-openai-demo)
 
 ## Google 
-
+- [Google Generative AI](https://github.com/GoogleCloudPlatform/generative-ai/tree/main/gen-app-builder)
 ## AWS 
 - [Bedrock Code Samples](https://github.com/aws-samples/amazon-bedrock-workshop.git)
